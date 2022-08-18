@@ -1,0 +1,35 @@
+--Create a store database
+
+CREATE TABLE dresses(id integer PRIMARY KEY, name TEXT, quantity INTEGER, price INTEGER, brand TEXT);
+
+INSERT INTO dresses VALUES
+(1, 'cotton voile mini', 10, 310, 'juliet dunn'),
+(2, 'pattern suit', 8, 375, 'apiece apart'),
+(3, 'sculpting mini', 5, 2700, 'givenchy'),
+(4, 'asymmetric panel', 5, 660, 'moré noir'),
+(5, 'midweight knit', 5, 498, 'cult gaia'),
+(6, 'ruffled maxi', 5, 640, 'evi grintela'),
+(7, 'linen maxi', 10, 298, 'faherty'),
+(8, 'embroidered cotton', 5, 772, 'pippa holt'),
+(9, 'ruffled trim', 5, 795, 'lisa marie fernandez'),
+(10, 'graphic element', 10, 438, 'marie oliver'),
+(11, 'draped silk', 10, 525, 'olivia von halle'),
+(12, 'flirty air', 20, 275, 'marchesa'),
+(13, 'pleated', 20, 135, 'current air'),
+(14, 'embroidered trim', 10, 425, 'hunter bell'),
+(15, 'minimalist denim', 20, 295, 'frame')
+;
+
+--display the database ordered by price.
+SELECT * FROM dresses ORDER BY price ASC;
+
+--which dresses are priced under 500
+SELECT * FROM dresses 
+WHERE price <=500 ORDER BY price ASC; 
+
+--which dresses are priced over 500
+SELECT * FROM dresses 
+WHERE price >500 ORDER BY price ASC;
+
+--what is the price of the most expensive item and what brand is it
+SELECT id, brand, MAX(price) FROM dresses;
